@@ -1,0 +1,31 @@
+{
+  "name": "@k2data/node-red-contrib-python-function",
+  "version": "0.1.0",
+  "description": "python function",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k2data/node-red-contrib-python-function.git"
+  },
+  "keywords": [
+    "node-red",
+    "function",
+    "python"
+  ],
+  "node-red": {
+    "nodes": {
+      "python-function": "python-function.js"
+    }
+  },
+  "author": "K2data",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/k2data/node-red-contrib-python-function/issues"
+  },
+  "homepage": "https://github.com/k2data/node-red-contrib-python-function#readme",
+  "devDependencies": {
+    "node-red-node-test-helper": "^0.2.7"
+  }
+}
