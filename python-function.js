@@ -179,7 +179,7 @@ async def connect_stdin_stdout(loop):
     w_channel = os.fdopen(4, "r+b", buffering=0)
     
     ## Connect reader with pipe
-    reader = asyncio.StreamReader()
+    reader = asyncio.StreamReader(limit=2**22)
     r_protocol = asyncio.StreamReaderProtocol(reader)
     await loop.connect_read_pipe(lambda: r_protocol, r_channel)
     
