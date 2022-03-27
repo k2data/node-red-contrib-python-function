@@ -172,6 +172,7 @@ class Node(object):
         self.__writer.write(msg.dumps().encode('utf-8'))
         # 是否需要 drain，可以不用 drain，或者在合适的地方 drain？
         # 比如 send_to_node 时 drain
+        # https://stackoverflow.com/questions/53779956/why-should-asyncio-streamwriter-drain-be-explicitly-called
         # self.__writer.drain()
 
 
