@@ -166,7 +166,13 @@ class Node(object):
         await self.__writer.drain()
 
     def send_to_node_sync(self, msg):
-      self.__writer_sync.write(msg.dumps().encode('utf-8'))
+        # 当数据比较大时，下面方法将会报错
+        # self.__writer_sync.write(msg.dumps().encode('utf-8'))
+
+        self.__writer.write(msg.dumps().encode('utf-8'))
+        # 是否需要 drain，可以不用 drain，或者在合适的地方 drain？
+        # 比如 send_to_node 时 drain
+        # self.__writer.drain()
 
 
 def python_function(msg, node):
